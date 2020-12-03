@@ -1,0 +1,90 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  margin: 5%;
+}
+
+.container {
+  margin: 20px auto;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid #8f72b3;
+  padding: 7px 12px;
+  font-weight: 500;
+}
+
+button:hover {
+  filter: invert(0.2);
+}
+
+.add-server {
+  background-color: #8f72b3;
+  color: white;
+  margin: 10px 10px 10px 0;
+}
+
+.remove-server {
+  color: #8f72b3;
+  background-color: white;
+}
+
+#serverContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.server-list {
+  height: 20px;
+  width: 100px;
+  border: 3px solid #8f72b3;
+  margin: 10px 10px 10px 0;
+  border-radius: 5px;
+  color: #8f72b3;
+  padding: 5px;
+}
+
+input {
+  border-radius: 5px;
+  width: 35px;
+  border: 1px solid #8f72b3;
+  padding: 5px 10px;
+  font-weight: 500;
+  margin: 5px 5px 10px 0;
+}
+.add-task {
+  background-color: #8f72b3;
+  color: white;
+}
+.task-container {
+  display: flex;
+  margin: 10px 0;
+}
+.task-bar {
+  position: relative;
+  height: 30px;
+  border: 3px solid #8f72b3;
+  border-radius: 7px;
+  width: 80%;
+  margin-right: 10px;
+  color: #8f72b3;
+  line-height: 30px;
+}
+
+.task-bar > span {
+  background-color: #8f72b3;
+  height: 100%;
+  position: absolute;
+  /* color: white; */
+  color: black;
+  padding-left: 5px;
+}
+
+.delete-task {
+  border: 3px solid #8f72b3;
+  border-radius: 7px;
+  color: #8f72b3;
+}
