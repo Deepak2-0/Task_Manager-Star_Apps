@@ -71,7 +71,11 @@ function handleDeleteTask(taskId) {
 function deleteTask(taskId) {
   //console.log(taskId);
 
-  document.getElementById(taskId).remove(); //fot deleting html element
+  let grabTask = document.getElementById(taskId); //fot deleting html element
+
+  if (grabTask !== null) {
+    grabTask.remove();
+  }
 
   // For deleting from task Array
   let indexToDelete = -1;
@@ -117,7 +121,7 @@ function handleRemoveServer() {
     if (serverArray[i].isTaskDoing === false) {
       flag = true;
       deleteServer(serverArray[i].id);
-      break;
+      return;
     }
   }
 
@@ -186,9 +190,8 @@ function doTask(taskId, serverId) {
           break;
         }
       }
-
-      deleteTask(taskId);
       checkServerDeletePending(serverId);
+      deleteTask(taskId);
       clearInterval(timerId);
     }
   }
@@ -198,10 +201,13 @@ function checkServerDeletePending(serverId) {
   if (serversDeletePending > 0) {
     serversDeletePending--;
 
-    if (serverArray.length === minServerAllowed) return; //as minimum 1 server required
+    if (serverArray.length === minServerAllowed) {
+      //as minimum 1 server required
+      assignTask();
+      return;
+    }
     deleteServer(serverId);
     return;
   }
-
   assignTask();
 }
